@@ -1,2 +1,21 @@
-<h1>Backpacks#show</h1>
-<p>Find me in app/views/backpacks/show.html.erb</p>
+<h1><%= @backpack.name %></h1>
+
+<%= turbo_frame_tag "backpack-items" do %>
+  <h2>Current Items</h2>
+  <div class="current-items">
+    <ul>
+      <% @backpack.items.each do |item| %>
+      <li><%= item.name %> <%= link_to "Remove", remove_item_backpack_path(id: @backpack.id, item_id: item.id), data: { "turbo-method": :delete } %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <h2>Remaining Items</h2>
+  <div class="remaining-items">
+    <ul>
+      <% (@items - @backpack.items).each do |item| %>
+      <li><%= item.name %> <%= link_to "Add", add_item_backpack_path(id: @backpack.id, item_id: item.id), data: { "turbo-method": :post } %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
