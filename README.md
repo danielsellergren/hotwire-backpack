@@ -1,4 +1,4 @@
-# Hotwire Backback Items Tutorial
+# Hotwire Backpack Items Tutorial
 
 This is a simple Rails 7 project that allows the user to add and remove `Items` from a `Backpack`. It uses Hotwire and specifically Turbo Frames to do this without page reloads, demonstrating an easy way to build a dynamic web application with zero explicit JavaScript.
 
