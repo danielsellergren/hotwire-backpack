@@ -1,2 +1,7 @@
-<h1>Backpacks#index</h1>
-<p>Find me in app/views/backpacks/index.html.erb</p>
+<h1>Backpacks</h1>
+
+<ul>
+  <% @backpacks.each do |backpack| -%>
+  <li><%= link_to backpack.name, backpack %></li>
+  <% end -%>
+</ul>
